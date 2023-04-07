@@ -1,0 +1,34 @@
+import numpy as np
+import matplotlib.pyplot as plt
+# setting the axes projection as polar
+plt.axes(projection = 'polar')
+# setting the radius
+r = 2
+# creating an array containing the radian values
+rads = np.arange(0, (2 * np.pi), 0.01)
+# plotting the circle
+for rad in rads:
+plt.polar(rad, r, 'g.')
+# display the Polar plot
+plt . title (" Circle ") # Add a title
+plt.show()
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+# setting the axes
+# projection as polar
+plt.axes(projection = 'polar')
+# setting the length of axis of cardioid
+a=4
+# creating an array containing the radian values
+rads = np.arange(0, (2 * np.pi), 0.01)
+# plotting the cardioid
+for rad in rads:
+r = a + (a*np.cos(rad))
+plt.polar(rad,r,'g.')
+# display the polar plot
+plt .title (" Cardioid ") # Add a title
+plt.show()
