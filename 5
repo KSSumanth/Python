@@ -1,15 +1,15 @@
 import numpy as np #Import necessary libraries
-# Defining matrix A-coefficient matrix
+
 A=np . matrix ([[1 ,2 ,-1],[2 ,1 , 4],[3 ,3 , 4]])
-# Defining matrix B-matrix of constants
+
 B=np . matrix ([[1],[2],[1]])
-# Concatenating matrix A and B: [A:B]
+
 AB=np . concatenate (( A , B ) , axis =1 )
-rA=np . linalg . matrix_rank ( A ) # Computing rank of matrix A
-rAB =np . linalg . matrix_rank ( AB ) # Computing rank of matrix AB
-n=A . shape [1]#Computing order of matrix A
-if ( rA==rAB ):#Checking for consistency
-if ( rA==n ):#Checking for unique solution
+rA=np . linalg . matrix_rank ( A ) 
+rAB =np . linalg . matrix_rank ( AB ) 
+n=A . shape [1]
+if ( rA==rAB ):
+if ( rA==n ):
 print ("The system has unique solution ")
 print ( np . linalg . solve (A , B ) )
 else :
