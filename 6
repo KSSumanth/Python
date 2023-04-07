@@ -1,0 +1,36 @@
+# Check the given matrix is Diagonally Dominant Matrix or not
+def isDDM(m, n) :
+# for each row
+for i in range(0, n) :
+# for each column, finding sum of each row
+sum = 0
+for j in range(0, n) :
+sum = sum + abs(m[i][j])
+# removing the diagonal element.
+sum = sum - abs(m[i][i])
+# checking if diagonal element is less than sum of non-diagonal element
+if (abs(m[i][i]) < sum) :
+return False
+return True
+
+n = 3
+m = [[1,2,-1],
+[3,-1,2],
+# Check the given matrix is Diagonally Dominant Matrix or not
+def isDDM(m, n) :
+# for each row
+for i in range(0, n) :
+# for each column, finding sum of each row
+sum = 0
+for j in range(0, n) :
+sum = sum + abs(m[i][j])
+# removing the diagonal element.
+sum = sum - abs(m[i][i])
+# checking if diagonal element is less than sum of non-diagonal element
+if (abs(m[i][i]) < sum) :
+return False
+return True
+
+n = 3
+m = [[1,2,-1],
+[3,-1,2],
