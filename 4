@@ -1,14 +1,14 @@
 fromsympy import*
 x , y = symbols('x y')
-u=exp(x)*(x*cos(y)-y*sin(y)) # input multivariable function u=u(x,y)
+u=exp(x)*(x*cos(y)-y*sin(y)) 
 print('u(x,y)=',u)
-dux = diff (u , x ) # Differentiate u w.r.t x
-duy = diff (u , y ) # Differentiate u w.r.t. y
-duxy = diff ( dux , y ) # computing uxy
-duyx = diff ( duy , x ) # computing uyx
+dux = diff (u , x ) 
+duy = diff (u , y ) 
+duxy = diff ( dux , y ) 
+duyx = diff ( duy , x ) 
 print('uxy=',duxy)
 print('uyx=',duyx)
-# Check the condtionuxy=uyx
+
 ifduxy == duyx :
 print('Mixed partial derivatives are equal')
 else :
@@ -50,20 +50,20 @@ print(" Further tests required at",'(',criticalpoints1[0] ,',',
 criticalpoints2[0],')' )
 f1=f.subs ({x: criticalpoints1[0],y: criticalpoints2[0]}).evalf()
 print('Functional value is f(x,y)=',f1)
-# ---- OPTIONAL PART : GRAPHING THE GIVEN FUNCTION(3D) ----
-# Import libraries
+
+
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Creating dataset
+
 x = np.outer(np.linspace(-3, 3, 2000), np.ones(2000))
 y = x.copy().T # transpose
 z = x**3+y**3-3*x-12*y+20
-# Creating figure
+
 fig = plt.figure(figsize =(15, 15))
 ax = plt.axes(projection ='3d')
-# Creating plot
+
 ax.plot_surface(x, y, z)
-# show plot
+
 plt.show()
