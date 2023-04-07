@@ -17,11 +17,11 @@ d4yat = lambdify (x , d4y)
 y=y0(x0)+((x-x0)/1)*dyat(x0)+((x-x0)**2/2)* d2yat(x0)+
 ((x-x0)**3/6)*d3yat(x0)+((x-x0)**4/24)*d4yat(x0)
 print ("Taylor series expansion of log(x) about x=1:", simplify(y))
-#comparing actual and approximated value of log(1.1)
+
 t1=1.1
 y1 = y.subs (x, t1) ;
 print('From the obtained Taylor series, log(1.1)~',simplify(float(y1)))
-# Manual-Taylor series expansion of log(x) about x=1:
+
 print(‘Verification:’)
 print('Actual value of log(1.1) is:', float(log(1.1)))
 print('Taylor series:')
@@ -49,7 +49,7 @@ print ("Maclaurins series expansion:", simplify ( y ) )
 yat = lambdify(x , y)
 print ("Approximated value of sin(10)+cos(10)~%.3f" % yat(10*(pi/180 )))
 print("Exact value of sin(10)+cos(10)~%.3f" %(sin(10*(pi/180))+cos(10*(pi/180))))
-# Plotting the graph of sin(x)+cos(x):
+
 def f(x):
 return np.sin(x)+np.cos(x)
 x = np.linspace(-10 , 10 )
