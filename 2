@@ -1,18 +1,18 @@
 import sympy
-r , t = symbols ('r,t') # Define the variables required as symbols
-r1=4*( 1+cos(t)) ; # Input first polar curve
-r2=5*( 1-cos(t)) ; # Input second polar curve
-dr1 = diff(r1,t) # find the derivative of first function
-dr2 = diff(r2,t) # find the derivative of second function
+r , t = symbols ('r,t') 
+r1=4*( 1+cos(t)) ; 
+r2=5*( 1-cos(t)) ; 
+dr1 = diff(r1,t) 
+dr2 = diff(r2,t) 
 t1=r1/dr1
 t2=r2/dr2
 q= solve(r1-r2,t)
-# solving the two curves to find their point of intersection between curves
-w1=t1.subs ({t: float(q[0])}) # substitute the value of "t" in t1
-w2=t2.subs ({t: float(q[0])}) # substitute the value of "t" in t2
-y1= atan(w1) # to find the inverse tan of w1
-y2= atan(w2) # to find the inverse tan of w2
-w=abs(y1-y2) # angle between two curves is abs(w1 -w2)
+
+w1=t1.subs ({t: float(q[0])}) 
+w2=t2.subs ({t: float(q[0])}) 
+y1= atan(w1) 
+y2= atan(w2) 
+w=abs(y1-y2) 
 print ('Angle between curves in radians is %0.4f, '%( w ) )
 if (round(float(w),2)==float('1.57')):
 print("And the Curves cut each other Orthogonally")
@@ -21,12 +21,12 @@ print("And the Curves cut each other Orthogonally")
 
 
 import sympy
-t= Symbol('t') # define t as symbol
-r= Symbol('r')# define r as symbol
-r=4*(1+cos(t))# consider the given curve
-r1= Derivative(r,t).doit()#find the first derivative of r w.r.t "t"
-r2= Derivative(r1,t).doit()#find the second derivative of r w.r.t"t"
+t= Symbol('t') 
+r= Symbol('r')
+r=4*(1+cos(t))
+r1= Derivative(r,t).doit()
+r2= Derivative(r1,t).doit()
 rho =((r**2+r1**2)**(1.5))/(r**2+2*r1**2-r*r2 );
 #Substitute r1 and r2 in formula
-rho1 = rho.subs(t,pi/2) #substitute t in rho
+rho1 = rho.subs(t,pi/2) 
 print('The radius of curvature is %4.4f units '%rho1)
