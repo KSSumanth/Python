@@ -1,0 +1,24 @@
+from sympy import beta , gamma
+m= input ('m :');
+n= input ('n :');
+m= float (m);
+n= float (n);
+s= beta (m,n);
+t= gamma (n)
+print ('gamma (',n,') is %3.3f '%t)
+print ('Beta (',m,',',n,') is %3.3f '%s)
+
+
+
+from sympy import beta , gamma
+m=5;
+n=7;
+m= float (m);
+n= float (n);
+s= beta (m,n);
+t=( gamma (m)* gamma (n))/ gamma (m+n);
+print('LHS = Beta(m,n)=',s,'\nRHS = Gamma(m)*Gamma(n))/Gamma(m+n)=',t)
+if (abs (s-t)<=0.00001 ):
+    print ('Beta and Gamma are related ')
+else :
+    print ('Given values are wrong ')
